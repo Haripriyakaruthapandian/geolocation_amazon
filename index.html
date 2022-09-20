@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon.in</title>
+  <link href="download (1).jfif" rel="icon">
+  <link rel="stylesheet" href="style.css" />
+  
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script>
+    
+    function closecoupon(){
+      document.getElementById('coupon').style.display="none";
+    }
+    var icon=document.getElementById("icon");
+    function onclickicon(){
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+            document.getElementById("icon").src = "sun.png";
+            document.getElementById("icon").style.backgroundcolor="black";
+            
+      }
+      else{
+        document.getElementById("icon").src = "moon.png";
+        
+      }
+    }
+  
+  </script>
+</head>
+
+<body>
+  <nav>
+    <div class="left dflex">
+      <a href="#"><img src="amazon.png" alt="logo" class="logo" /><span>.in</span></a>
+
+      <div class="item">
+        <p><i class="fa fa-map-marker me"></i>hello,</p>
+        <h5>enter your address</h5>
+      </div>
+    </div>
+    <div class="searchBox dflex">
+      <div class="box">
+        <div class="dflex">
+          <button type="submit" class="all">
+            All <i class="fa fa-sort-desc"></i>
+          </button>
+          <input type="text" />
+          <button type="submit" class="search">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="right dflex">
+      <div class="item">
+        <i class="fa fa-flag"></i><i class="fa fa-sort-desc"></i>
+      </div>
+      <div class="item">
+        <p>Hello,</p>
+        <h5>Account & Lists<i class="fa fa-sort-desc"></i></h5>
+      </div>
+      <div class="item">
+        <p>Returns</p>
+        <h5>& Order</h5>
+      </div>
+      <div class="item"><i class="fa fa-shopping-cart fa-2x"></i>Cart</div>
+    </div>
+  </nav>
+  <nav class="subnavigation">
+    <ul class="submenu">
+      <a href="#"><i class="fa fa-bars"></i>
+        <li>All</li>
+      </a>
+      <a href="#">
+        <li>Gift Cards</li>
+      </a>
+      <a href="#">
+        <li>Amazon Pay</li>
+      </a>
+      <a href="#">
+        <li>Amazon Business <i class="fa fa-sort-desc"></i></li>
+      </a>
+      <a href="#">
+        <li>Pet Supplies</li>
+      </a>
+      
+        <a href="#">
+        <li>Gift ideas</li>
+      </a>
+      
+      <a href="#">
+        <li>AmazonBasics</li>
+      </a>
+      <a href="#">
+        <li>Coupons</li>
+      </a>
+    </ul>
+    <ul style="position:absolute;left:50%;">
+      <a href="#"><i class="fa fa-amazon bg"></i>
+        <li class="li">Shopping made easy|Download the app</li>
+      </a>
+     
+    </ul>
+    <i class="fa  fa-sun-o"></i><p id="location"></p>
+    <i class="fa  fa-map-marker" id="mapp"></i><p id="weather" class="w"></p>
+<img src="moon.png" id="icon" onclick="onclickicon()">
+
+  </nav>
+
+  <div id="coupon">
+    <img src="coupon.jfif" width="100%" height="350px" id="coupid">
+
+    <button onclick="closecoupon()" width="45%" id="bid">&times;</button>
+   <div class="couponcode"><b><span style="color:#a90047">Use Code : BBDOCT22</span></b></div>
+  </div>
+  <img src="banner.jpg" height="250px" width="100%" style="position:absolute;top:15%">
+  <div class="contain">
+    <br>
+    <span class="label">Shop By Category</span>
+    <div class="inclas">
+      <div class="suggest">
+        <span class="pluck_card">Electronics & Gadgets</span>
+        <img src="suggest.jpg" height="350px" width="45%">
+  
+      </div>
+      <div class="suggest">
+        <span class="pluck_card">Kitchen Utilities</span>
+        <img src="kitchen.jpg" height="350px" width="45%" class="k">
+  
+      </div>
+      <div class="suggest">
+        <span class="pluck_card">Appliances</span>
+        <img src="appliance.jpg" height="350px" width="45%" class="a">
+  
+      </div>
+      
+    </div>
+  
+  
+  </div>
+ 
+
+  <div class="foot" style="width:100%">
+    <table align="center" cellspacing="9"><tr>
+        <th>Get to Know Us</th>
+        <th>Connect with Us</th>
+        <th>Make Money with Us</th>
+        <th>Let Us Help You</th>
+    </tr>
+<tr>
+    <td>About Us</td>
+    <td>Facebook</td>
+    <td>Sell on Amazon</td>
+    <td>Covid-19 and Amazon</td>
+</tr>
+<tr>
+    <td>Careers</td>
+    <td>Twitter</td>
+    <td>Sell Under Amazon Accelerator</td>
+    <td>Your Account</td>
+    
+</tr>
+<tr>
+    <td>Press Releases</td>
+    <td>Instagram</td>
+    <td>Amazon Global Selling</td>
+    <td>Returns Centre</td>
+</tr>
+</table>
+</div>
+<footer>
+<center>
+&copy;1996-2022,Amazon.com,Inc
+</center>
+</footer>
+<div class="loc">
+<p id="out" ></p>
+<p id="location"></p>
+<p id="weather"></p></div>
+<script>
+  
+  let x = document.getElementById('out');
+  let y = document.getElementById('weather');
+  let z = document.getElementById('location');
+  window.onload=function(){
+
+      if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(showPosition)
+      }else{
+          x.innerText= "Geo Not Supported"
+      }
+      document.getElementById('coupon').style.display="block";
+      document.getElementById('contain').style.opacity="0.5";
+  }
+
+  function showPosition(data){
+      console.log(data)
+      let lat = data.coords.latitude;
+      let long = data.coords.longitude;
+      
+      const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+      //api calling
+      fetch(url,{method:'GET'})
+      //return promise
+      .then((res) => res.json())
+      // resolve the promise
+      .then((data) => {
+          y.innerText = `${data.city.name}`
+          z.innerText = `Temp of day is ${data.list[0].temp.day} °C`
+      })
+
+  }
+</script>
+</body>
+
+</html>
